@@ -1,0 +1,26 @@
+use contact
+ 
+db.createCollection('contactlist') 
+
+db.contactlist.insertMany([
+{_id:1, Last Name : 'Ben Lahmer' , First Name : 'Fares' , Email:'fares@gmail.com',age:26},
+{_id:2, Last Name:'Kefi', First Name:'Seif', Email:'kefi@gmail.com',age:40},
+{_id:3, Last Name : 'Fatnassi', First Name :'Sarra',Email:'sarra.f@gmail.com',age:40},
+{_id:4, Last name:'Ben Yahia',First Name : 'Rym',age:4},
+{_id:5, Last Name :'Cherif' First Name:'Sami',age:3}])
+
+db.contactlist.find()
+
+db.contactlist.find({id : 1})
+
+db.contactlist.find({age : {$gt :18}})
+
+db.contactlist.find({age :{$gt : 18}, Fist Name:{$search : 'ah'}})
+
+db.conatactlist.update({Fist Name : 'Saif' , Last Name : 'Kefi'} , {$set:{Fist Name : 'Anis'}})
+
+db.conatactlist.remove({age:{$lt : 5}})
+
+db.conatactlist.find()
+
+
